@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schilderijen van Mama</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎨 Schilderijen van Mama</h1>
+    <nav>
+      <a href="#gallery">Galerij</a>
+      <a href="#contact">Contact</a>
+      <a href="#commission">Opdracht</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="gallery">
+      <h2>Galerij</h2>
+      <div class="grid">
+        <div class="painting">
+          <img src="https://picsum.photos/id/1025/400/300" alt="Schilderij 1">
+          <h3>Zonsondergang (2023)</h3>
+        </div>
+        <div class="painting">
+          <img src="https://picsum.photos/id/1062/400/300" alt="Schilderij 2">
+          <h3>Bloemen in een vaas (2024)</h3>
+        </div>
+        <div class="painting">
+          <img src="https://picsum.photos/id/1040/400/300" alt="Schilderij 3">
+          <h3>Stilleven (2022)</h3>
+        </div>
+        <div class="painting">
+          <img src="https://picsum.photos/id/1084/400/300" alt="Schilderij 4">
+          <h3>Landschap (2021)</h3>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <form name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
+        <label>Naam</label>
+        <input type="text" name="name" required />
+        <label>E-mail</label>
+        <input type="email" name="email" required />
+        <label>Bericht</label>
+        <textarea name="message" rows="4" required></textarea>
+        <button type="submit">Verstuur</button>
+      </form>
+    </section>
+
+    <section id="commission">
+      <h2>Laat een schilderij maken</h2>
+      <form name="commission" method="POST" data-netlify="true" enctype="multipart/form-data">
+        <input type="hidden" name="form-name" value="commission" />
+        <label>Naam</label>
+        <input type="text" name="name" required />
+        <label>E-mail</label>
+        <input type="email" name="email" required />
+        <label>Opmerking</label>
+        <input type="text" name="note" placeholder="Formaat, stijl, etc." />
+        <label>Upload je foto</label>
+        <input type="file" name="photo" accept="image/*" />
+        <button type="submit">Verstuur aanvraag</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Schilderijen van Mama</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
