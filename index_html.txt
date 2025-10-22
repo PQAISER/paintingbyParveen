@@ -118,13 +118,46 @@
     <section id="gallery" aria-labelledby="gallery-heading" style="margin-top:18px">
       <h2 id="gallery-heading" style="color:#fff;margin-bottom:10px;border-left:4px solid var(--accent);padding-left:10px">Gallery</h2>
       <div class="gallery" id="galleryGrid">
-        <div class="card" data-title="Painting 1"><img src="Painting1.jpeg" alt="Painting 1"><div class="meta"><h3>Untitled (Flowers)</h3><span>2024</span></div></div>
+        <div class="card" data-title="Painting 1"><img src="Painting1.jpeg" alt="Painting 1"><div class="meta"><h3>Flowers</h3><span>2024</span></div></div>
         <div class="card" data-title="Painting 2"><img src="Painting2.jpeg" alt="Painting 2"><div class="meta"><h3>Still Life</h3><span>2023</span></div></div>
         <div class="card" data-title="Painting 3"><img src="Painting3.jpeg" alt="Painting 3"><div class="meta"><h3>Landscape study</h3><span>2022</span></div></div>
         <div class="card" data-title="Painting 4"><img src="Painting4.jpeg" alt="Painting 4"><div class="meta"><h3>Portrait — Untitled</h3><span>2021</span></div></div>
         <div class="card" data-title="Painting 5"><img src="Painting5.jpeg" alt="Painting 5"><div class="meta"><h3>Marshlands</h3><span>2020</span></div></div>
         <div class="card" data-title="Painting 6"><img src="Painting6.jpeg" alt="Painting 6"><div class="meta"><h3>Evening</h3><span>2019</span></div></div>
-      </div>
+
+        <div class="card" data-title="Painting7"><img src="Painting7.jpeg" alt="Painting7"><div class="meta"><h3>Flowers</h3><span>2024</span></div></div>
+        <div class="card" data-title="Painting8"><img src="Painting8.jpeg" alt="Painting8"><div class="meta"><h3>Still Life</h3><span>2023</span></div></div>
+        <div class="card" data-title="Painting9><img src="Painting9.jpeg" alt="Painting9"><div class="meta"><h3>Landscape study</h3><span>2022</span></div></div>
+        <div class="card" data-title="Painting10"><img src="Painting10.jpeg" alt="Painting10"><div class="meta"><h3>Portrait — Untitled</h3><span>2021</span></div></div>
+        <div class="card" data-title="Painting11"><img src="Painting11.jpeg" alt="Painting11"><div class="meta"><h3>Marshlands</h3><span>2020</span></div></div>
+        <div class="card" data-title="Painting12"><img src="Painting12.jpeg" alt="Painting12"><div class="meta"><h3>Evening</h3><span>2019</span></div></div>
+        <div class="card" data-title="Painting13"><img src="Painting13.jpeg" alt="Painting13"><div class="meta"><h3>Flowers</h3><span>2024</span></div></div>
+        <div class="card" data-title="Painting14"><img src="Painting14.jpeg" alt="Painting14"><div class="meta"><h3>Still Life</h3><span>2023</span></div></div>
+        <div class="card" data-title="Painting15"><img src="Painting15.jpeg" alt="Painting15"><div class="meta"><h3>Landscape study</h3><span>2022</span></div></div>
+        <div class="card" data-title="Painting16"><img src="Painting16.jpeg" alt="Painting16"><div class="meta"><h3>Portrait — Untitled</h3><span>2021</span></div></div>
+        <div class="card" data-title="Painting17"><img src="Painting17.jpeg" alt="Painting17"><div class="meta"><h3>Marshlands</h3><span>2020</span></div></div>
+        <div class="card" data-title="Painting18"><img src="Painting18.jpeg" alt="Painting18"><div class="meta"><h3>Evening</h3><span>2019</span></div></div>
+        <div class="card" data-title="Painting19"><img src="Painting19.jpeg" alt="Painting19"><div class="meta"><h3>Flowers</h3><span>2024</span></div></div>
+        <div class="card" data-title="Painting20"><img src="Painting20.jpeg" alt="Painting20"><div class="meta"><h3>Still Life</h3><span>2023</span></div></div>
+        <div class="card" data-title="Painting21"><img src="Painting21.jpeg" alt="Painting21"><div class="meta"><h3>Landscape study</h3><span>2022</span></div></div>
+        <div class="card" data-title="Painting22"><img src="Painting22.jpeg" alt="Painting22"><div class="meta"><h3>Portrait — Untitled</h3><span>2021</span></div></div>
+        <div class="card" data-title="Painting23"><img src="Painting23.jpeg" alt="Painting23"><div class="meta"><h3>Marshlands</h3><span>2020</span></div></div>
+        <div class="card" data-title="Painting24"><img src="Painting24.jpeg" alt="Painting24"><div class="meta"><h3>Evening</h3><span>2019</span></div></div>
+        <div class="card" data-title="Painting25"><img src="Painting25.jpeg" alt="Painting25"><div class="meta"><h3>Flowers</h3><span>2024</span></div></div>
+        <div class="card" data-title="Painting26"><img src="Painting26.jpeg" alt="Painting26"><div class="meta"><h3>Still Life</h3><span>2023</span></div></div>
+        <div class="card" data-title="Painting27"><img src="Painting27.jpeg" alt="Painting27"><div class="meta"><h3>Landscape study</h3><span>2022</span></div></div>
+        <div class="card" data-title="Painting28"><img src="Painting28.jpeg" alt="Painting28"><div class="meta"><h3>Portrait — Untitled</h3><span>2021</span></div></div>
+        <div class="card" data-title="Painting29"><img src="Painting29.jpeg" alt="Painting29"><div class="meta"><h3>Marshlands</h3><span>2020</span></div></div>
+        <div class="card" data-title="Painting30"><img src="Painting30.jpeg" alt="Painting30"><div class="meta"><h3>Evening</h3><span>2019</span></div></div>
+        <div class="card" data-title="Painting31"><img src="Painting31.jpeg" alt="Painting31"><div class="meta"><h3>Flowers</h3><span>2024</span></div></div>
+        <div class="card" data-title="Painting32"><img src="Painting32.jpeg" alt="Painting32"><div class="meta"><h3>Still Life</h3><span>2023</span></div></div>
+        <div class="card" data-title="Painting33"><img src="Painting33.jpeg" alt="Painting33"><div class="meta"><h3>Landscape study</h3><span>2022</span></div></div>
+        <div class="card" data-title="Painting34"><img src="Painting34.jpeg" alt="Painting34"><div class="meta"><h3>Portrait — Untitled</h3><span>2021</span></div></div>
+        <div class="card" data-title="Painting35"><img src="Painting35.jpeg" alt="Painting35"><div class="meta"><h3>Marshlands</h3><span>2020</span></div></div>
+        <div class="card" data-title="Painting36"><img src="Painting36.jpeg" alt="Painting36"><div class="meta"><h3>Evening</h3><span>2019</span></div></div>
+        <div class="card" data-title="Painting37"><img src="Painting37.jpeg" alt="Painting37"><div class="meta"><h3>Evening</h3><span>2019</span></div></div>
+
+</div>
     </section>
 
     <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true">
@@ -259,3 +292,4 @@
   </script>
 </body>
 </html>
+
