@@ -1,79 +1,458 @@
-<!DOCTYPE html>
-<html lang="nl">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Schilderijen van Mama</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Parveen Zaman – Qaiser | Artist</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <meta name="description" content="Paintings by Parveen Zaman - Qaiser. Flowers, landscapes and soulful portraits. Commissions open." />
+
+  <style>
+    :root{
+      --navy:#0b2540;
+      --deep-green:#123b2c;
+      --accent:#b9924c; /* warm gold */
+      --muted:#bfc7c2;
+      --card:#0f2a2a;
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Poppins,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background: linear-gradient(180deg, var(--navy) 0%, var(--deep-green) 100%);
+      color:#f6f6f6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      max-width:var(--max-width);
+      margin:1.25rem auto;
+      padding:1rem;
+      background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border-radius:12px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.35);
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:1rem;
+    }
+    .logo{
+      width:64px;height:64px;border-radius:8px;
+      background:linear-gradient(135deg,var(--deep-green),var(--navy));
+      display:flex;align-items:center;justify-content:center;
+      box-shadow: inset 0 -8px 20px rgba(0,0,0,0.25);
+      border:2px solid rgba(255,255,255,0.03);
+      font-family:Playfair Display, serif;
+      color:var(--accent);
+      font-weight:700;
+      font-size:18px;
+    }
+    h1{
+      margin:0;
+      font-family:Playfair Display, serif;
+      font-weight:700;
+      font-size:1.05rem;
+      letter-spacing:0.6px;
+      color:#fff;
+    }
+    .subtitle{
+      display:block;
+      font-size:0.78rem;
+      color:var(--muted);
+      margin-top:3px;
+    }
+
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:1rem;
+      font-weight:600;
+      font-size:0.95rem;
+    }
+    nav a:hover{color:var(--accent)}
+
+    main{
+      max-width:var(--max-width);
+      margin:1.5rem auto;
+      padding:1rem;
+    }
+
+    .intro{
+      display:flex;
+      gap:1.25rem;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-bottom:1.5rem;
+    }
+    .hero{
+      flex:1 1 380px;
+      min-width:260px;
+      padding:1.1rem;
+      background:rgba(255,255,255,0.03);
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .hero h2{
+      margin:0 0 6px 0;
+      font-family:Playfair Display, serif;
+      font-size:1.5rem;
+      color:#fff;
+    }
+    .hero p{color:var(--muted); margin:0 0 .75rem 0}
+
+    .cta{
+      margin-top:8px;
+    }
+    .btn{
+      display:inline-block;
+      background:var(--accent);
+      color:#081217;
+      padding:0.6rem 0.9rem;
+      border-radius:8px;
+      font-weight:700;
+      text-decoration:none;
+      box-shadow: 0 6px 18px rgba(11,37,64,0.35);
+    }
+    .btn.secondary{
+      background:transparent;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.04);
+      margin-left:0.6rem;
+      box-shadow:none;
+    }
+
+    /* Gallery */
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:14px;
+      margin-top:1rem;
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.03);
+      transition:transform .22s ease, box-shadow .22s ease;
+      cursor:pointer;
+      min-height:220px;
+      display:flex;
+      flex-direction:column;
+    }
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 18px 40px rgba(0,0,0,0.45);
+    }
+    .card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      display:block;
+      background:#111;
+    }
+    .card .meta{
+      padding:0.7rem 0.9rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .meta h3{
+      margin:0;
+      font-size:0.98rem;
+      color:#fff;
+      font-weight:600;
+      font-family:Playfair Display, serif;
+    }
+    .meta span{color:var(--muted); font-size:0.85rem}
+
+    /* Lightbox */
+    .lightbox{
+      position:fixed;inset:0;background:rgba(2,6,10,0.75);display:flex;align-items:center;justify-content:center;z-index:1200;padding:20px;opacity:0;pointer-events:none;transition:opacity .18s;
+    }
+    .lightbox.open{opacity:1;pointer-events:auto}
+    .lightbox .inner{
+      max-width:1000px;width:100%;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;overflow:hidden;
+    }
+    .lightbox img{width:100%;height:70vh;object-fit:contain;background:#0b1720;display:block}
+    .lightbox .info{padding:12px 16px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+    .close{
+      background:transparent;border:0;color:var(--muted);font-size:20px;padding:6px 10px;cursor:pointer;
+    }
+
+    /* Contact + Commission */
+    .forms{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:1.5rem;
+    }
+    @media (max-width:860px){ .forms{grid-template-columns:1fr} }
+    form.card-form{
+      padding:14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    label{font-size:0.85rem;color:var(--muted)}
+    input[type="text"], input[type="email"], textarea, input[type="file"]{
+      padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:#fff;
+      outline:none;
+    }
+    textarea{min-height:110px;resize:vertical}
+    .form-row{display:flex;gap:10px}
+    .form-row .col{flex:1}
+    .note{font-size:0.82rem;color:var(--muted)}
+
+    footer{
+      max-width:var(--max-width);
+      margin:2rem auto 3rem;
+      text-align:center;color:var(--muted);
+      font-size:0.9rem;
+    }
+
+    /* small screens */
+    @media (max-width:740px){
+      header{padding:.7rem;margin:.6rem}
+      .logo{width:56px;height:56px;font-size:16px}
+      .hero h2{font-size:1.2rem}
+    }
+
+  </style>
 </head>
 <body>
   <header>
-    <h1>🎨 Schilderijen van Mama</h1>
-    <nav>
-      <a href="#gallery">Galerij</a>
+    <div class="brand">
+      <div class="logo">PZ</div>
+      <div>
+        <h1>Parveen Zaman – Qaiser <span style="font-weight:300;font-size:.9rem;color:var(--muted)">| Artist</span></h1>
+        <span class="subtitle">Flowers • Landscapes • Soulful Portraits</span>
+      </div>
+    </div>
+
+    <nav aria-label="Main navigation">
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
       <a href="#contact">Contact</a>
-      <a href="#commission">Opdracht</a>
     </nav>
   </header>
 
   <main>
-    <section id="gallery">
-      <h2>Galerij</h2>
-      <div class="grid">
-        <div class="painting">
-          <img src="https://picsum.photos/id/1025/400/300" alt="Schilderij 1">
-          <h3>Zonsondergang (2023)</h3>
+    <section class="intro">
+      <div class="hero">
+        <h2>Works that whisper &amp; speak</h2>
+        <p>Parveen paints with deep tones — navy blue and forest green form the backdrop for flowers, landscapes and intimate portraits. Commissions are open. Browse the gallery and send a commission request below.</p>
+        <div class="cta">
+          <a class="btn" href="#commission">Request a commission</a>
+          <a class="btn secondary" href="#gallery">View gallery</a>
         </div>
-        <div class="painting">
-          <img src="https://picsum.photos/id/1062/400/300" alt="Schilderij 2">
-          <h3>Bloemen in een vaas (2024)</h3>
+      </div>
+      <div style="flex:0 0 260px; min-width:220px; display:flex;flex-direction:column;gap:12px;align-items:stretch">
+        <div style="background:rgba(255,255,255,0.02);padding:12px;border-radius:12px">
+          <h3 style="margin:0 0 8px 0;font-family:Playfair Display, serif">Exhibitions & Contacts</h3>
+          <p class="note">Email: <a href="mailto:parveen@example.com" style="color:var(--accent)">parveen@example.com</a></p>
+          <p class="note">Based in Netherlands. Shipping available.</p>
         </div>
-        <div class="painting">
-          <img src="https://picsum.photos/id/1040/400/300" alt="Schilderij 3">
-          <h3>Stilleven (2022)</h3>
-        </div>
-        <div class="painting">
-          <img src="https://picsum.photos/id/1084/400/300" alt="Schilderij 4">
-          <h3>Landschap (2021)</h3>
+        <div style="background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));padding:12px;border-radius:12px">
+          <h4 style="margin:0 0 8px 0">Signature</h4>
+          <p class="note">Parveen Zaman – Qaiser</p>
         </div>
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <form name="contact" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact" />
-        <label>Naam</label>
-        <input type="text" name="name" required />
-        <label>E-mail</label>
-        <input type="email" name="email" required />
-        <label>Bericht</label>
-        <textarea name="message" rows="4" required></textarea>
-        <button type="submit">Verstuur</button>
-      </form>
+    <section id="gallery" aria-labelledby="gallery-heading" style="margin-top:18px">
+      <h2 id="gallery-heading" style="color:#fff;margin-bottom:10px;border-left:4px solid var(--accent);padding-left:10px">Gallery</h2>
+
+      <div class="gallery" id="galleryGrid">
+        <!-- Cards: uses images from repo root. Filenames must exactly match and be uploaded -->
+        <div class="card" data-title="Painting 1">
+          <img src="Painting%201.jpeg" alt="Painting 1 by Parveen">
+          <div class="meta"><h3>Untitled (Flowers)</h3><span>2024</span></div>
+        </div>
+
+        <div class="card" data-title="Painting 2">
+          <img src="Painting%202.jpeg" alt="Painting 2 by Parveen">
+          <div class="meta"><h3>Still Life</h3><span>2023</span></div>
+        </div>
+
+        <div class="card" data-title="Painting 3">
+          <img src="Painting%203.jpeg" alt="Painting 3 by Parveen">
+          <div class="meta"><h3>Landscape study</h3><span>2022</span></div>
+        </div>
+
+        <div class="card" data-title="Painting 4">
+          <img src="Painting%204.jpeg" alt="Painting 4 by Parveen">
+          <div class="meta"><h3>Portrait — Untitled</h3><span>2021</span></div>
+        </div>
+
+        <div class="card" data-title="Painting 5">
+          <img src="Painting%205.jpeg" alt="Painting 5 by Parveen">
+          <div class="meta"><h3>Marshlands</h3><span>2020</span></div>
+        </div>
+
+        <div class="card" data-title="Painting 6">
+          <img src="Painting%206.jpeg" alt="Painting 6 by Parveen">
+          <div class="meta"><h3>Evening</h3><span>2019</span></div>
+        </div>
+      </div>
     </section>
 
-    <section id="commission">
-      <h2>Laat een schilderij maken</h2>
-      <form name="commission" method="POST" data-netlify="true" enctype="multipart/form-data">
-        <input type="hidden" name="form-name" value="commission" />
-        <label>Naam</label>
-        <input type="text" name="name" required />
-        <label>E-mail</label>
-        <input type="email" name="email" required />
-        <label>Opmerking</label>
-        <input type="text" name="note" placeholder="Formaat, stijl, etc." />
-        <label>Upload je foto</label>
-        <input type="file" name="photo" accept="image/*" />
-        <button type="submit">Verstuur aanvraag</button>
-      </form>
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true">
+      <div class="inner" role="document">
+        <div style="display:flex;justify-content:flex-end;padding:6px;background:transparent">
+          <button class="close" id="closeBtn" aria-label="Close">✕</button>
+        </div>
+        <img id="lightboxImg" src="" alt="">
+        <div class="info">
+          <div id="lightboxTitle" style="color:#fff;font-weight:600"></div>
+          <div style="color:var(--muted)"></div>
+        </div>
+      </div>
+    </div>
+
+    <section id="about" style="margin-top:24px">
+      <h2 style="color:#fff;margin-bottom:10px;border-left:4px solid var(--accent);padding-left:10px">About the Artist</h2>
+      <div style="background:rgba(0,0,0,0.06);padding:14px;border-radius:10px;color:var(--muted)">
+        <p style="margin:0">Parveen Zaman – Qaiser paints intimate studies of everyday life, portraits of women with dignity, expressive florals and contemplative landscapes. Her palette often leans toward deep navy and forest greens punctuated with subtle warm highlights.</p>
+      </div>
     </section>
+
+    <section id="forms" style="margin-top:18px">
+      <h2 style="color:#fff;margin-bottom:10px;border-left:4px solid var(--accent);padding-left:10px">Get in touch / Commission</h2>
+
+      <div class="forms">
+        <!-- Contact form: replace action URL with your Formspree endpoint -->
+        <form class="card-form" id="contactForm" method="POST" action="https://formspree.io/f/your-form-id">
+          <input type="hidden" name="_subject" value="Website contact from parveen site">
+          <label for="cname">Name</label>
+          <input id="cname" name="name" type="text" required>
+
+          <label for="cemail">Email</label>
+          <input id="cemail" name="email" type="email" required>
+
+          <label for="cmessage">Message</label>
+          <textarea id="cmessage" name="message" rows="4" required></textarea>
+
+          <div style="display:flex;gap:10px;align-items:center">
+            <button class="btn" type="submit">Send message</button>
+            <div class="note">Or email: <a href="mailto:parveen@example.com" style="color:var(--accent)">parveen@example.com</a></div>
+          </div>
+
+          <div id="contactStatus" class="note" style="margin-top:6px"></div>
+        </form>
+
+        <!-- Commission form: file uploads require a backend. We include a form that sends an email via Formspree (attachments may need paid plan).
+             Alternative: ask clients to email with attachments. -->
+        <form class="card-form" id="commissionForm" method="POST" action="https://formspree.io/f/your-form-id" enctype="multipart/form-data">
+          <input type="hidden" name="_subject" value="Commission request from website">
+          <label for="pname">Name</label>
+          <input id="pname" name="name" type="text" required>
+
+          <label for="pemail">Email</label>
+          <input id="pemail" name="email" type="email" required>
+
+          <label for="pnote">Notes (size, style, deadline)</label>
+          <input id="pnote" name="note" type="text" placeholder="e.g. 40x50cm, oil on canvas">
+
+          <label for="photo">Upload photo (reference)</label>
+          <input id="photo" name="photo" type="file" accept="image/*">
+
+          <div style="display:flex;gap:10px;align-items:center">
+            <button class="btn" type="submit">Send commission request</button>
+            <button type="button" class="btn secondary" onclick="scrollToContact()">Ask a question</button>
+          </div>
+
+          <div id="commissionStatus" class="note" style="margin-top:6px"></div>
+        </form>
+      </div>
+    </section>
+
   </main>
 
   <footer>
-    <p>© <span id="year"></span> Schilderijen van Mama</p>
+    <div>© <span id="year"></span> Parveen Zaman – Qaiser</div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // auto year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Lightbox logic
+    const cards = document.querySelectorAll('.card');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const closeBtn = document.getElementById('closeBtn');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const img = card.querySelector('img');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightboxTitle.textContent = card.dataset.title || '';
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.src = '';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('open');
+        lightboxImg.src = '';
+        lightbox.setAttribute('aria-hidden','true');
+      }
+    });
+
+    // Basic form UX (client-side)
+    const contactForm = document.getElementById('contactForm');
+    const contactStatus = document.getElementById('contactStatus');
+    contactForm.addEventListener('submit', (e) => {
+      // Let the form submit to Formspree — but show immediate feedback.
+      contactStatus.textContent = 'Sending…';
+      setTimeout(() => {
+        contactStatus.textContent = 'If you used a demo endpoint, replace the form action with your Formspree URL. Otherwise check your email service.';
+      }, 900);
+    });
+
+    const commissionForm = document.getElementById('commissionForm');
+    const commissionStatus = document.getElementById('commissionStatus');
+    commissionForm.addEventListener('submit', (e) => {
+      commissionStatus.textContent = 'Sending…';
+      setTimeout(() => {
+        commissionStatus.textContent = 'If you want file uploads to work, connect to a backend (Formspree paid plan or Netlify Forms).';
+      }, 900);
+    });
+
+    function scrollToContact(){
+      document.getElementById('contactForm').scrollIntoView({behavior:'smooth', block:'center'});
+    }
+
+    // Accessibility: close lightbox with ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+        lightbox.classList.remove('open');
+        lightboxImg.src = '';
+        lightbox.setAttribute('aria-hidden','true');
+      }
+    });
+  </script>
 </body>
 </html>
