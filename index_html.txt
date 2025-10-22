@@ -124,10 +124,9 @@
         <div class="card" data-title="Painting 4"><img src="Painting4.jpeg" alt="Painting 4"><div class="meta"><h3>Portrait — Untitled</h3><span>2021</span></div></div>
         <div class="card" data-title="Painting 5"><img src="Painting5.jpeg" alt="Painting 5"><div class="meta"><h3>Marshlands</h3><span>2020</span></div></div>
         <div class="card" data-title="Painting 6"><img src="Painting6.jpeg" alt="Painting 6"><div class="meta"><h3>Evening</h3><span>2019</span></div></div>
-
         <div class="card" data-title="Painting7"><img src="Painting7.jpeg" alt="Painting7"><div class="meta"><h3>Flowers</h3><span>2024</span></div></div>
         <div class="card" data-title="Painting8"><img src="Painting8.jpeg" alt="Painting8"><div class="meta"><h3>Still Life</h3><span>2023</span></div></div>
-        <div class="card" data-title="Painting9><img src="Painting9.jpeg" alt="Painting9"><div class="meta"><h3>Landscape study</h3><span>2022</span></div></div>
+        <div class="card" data-title="Painting9"><img src="Painting9.jpeg" alt="Painting9"><div class="meta"><h3>Landscape study</h3><span>2022</span></div></div>
         <div class="card" data-title="Painting10"><img src="Painting10.jpeg" alt="Painting10"><div class="meta"><h3>Portrait — Untitled</h3><span>2021</span></div></div>
         <div class="card" data-title="Painting11"><img src="Painting11.jpeg" alt="Painting11"><div class="meta"><h3>Marshlands</h3><span>2020</span></div></div>
         <div class="card" data-title="Painting12"><img src="Painting12.jpeg" alt="Painting12"><div class="meta"><h3>Evening</h3><span>2019</span></div></div>
@@ -292,4 +291,5 @@
   </script>
 </body>
 </html>
+
 
